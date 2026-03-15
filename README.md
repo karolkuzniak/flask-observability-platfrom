@@ -112,9 +112,7 @@ These metrics are collected by Prometheus and visualized in Grafana dashboards.
 
 # Dashboard
 
-📸 **SCREENSHOT HERE**
 
-Add screenshot here showing Grafana dashboard with request and error metrics.
 
 Example file location:
 
