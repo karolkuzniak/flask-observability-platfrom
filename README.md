@@ -59,7 +59,8 @@ monitoring
 grafana  
 - dashboards  
   - flask-dashboard.json  
-- provisioning  
+- provisioning
+  - dashboard.yml
 
 loadtest  
 - locustfile.py  
@@ -100,7 +101,7 @@ The Flask application exposes Prometheus metrics at:
 ```
 http://localhost:5000/metrics
 ```
-
+![metrics](docs/metrics2.png)
 Example metrics:
 
 - flask_requests_total
@@ -112,19 +113,14 @@ These metrics are collected by Prometheus and visualized in Grafana dashboards.
 
 # Dashboard
 
-📸 **SCREENSHOT HERE**
-
-Add screenshot here showing Grafana dashboard with request and error metrics.
-
 Example file location:
 
 docs/grafana-dashboard.png
 
 Usage in README:
 
-```
-![Grafana Dashboard](docs/grafana-dashboard.png)
-```
+![grafana](docs/grafana2.png)
+
 
 ---
 
@@ -132,13 +128,7 @@ Usage in README:
 
 Prometheus scrapes metrics from the Flask application and stores time-series data.
 
-📸 **SCREENSHOT HERE**
-
-Add screenshot showing Prometheus targets page.
-
-Example:
-
-docs/prometheus-targets.png
+![prometheus](docs/prometheus2.png)
 
 ---
 
@@ -150,14 +140,7 @@ Promtail → Loki → Grafana
 
 This enables centralized log storage and log querying directly in Grafana.
 
-📸 **SCREENSHOT HERE**
-
-Add screenshot showing logs in Grafana (Loki datasource).
-
-Example:
-
-docs/grafana-logs.png
-
+![logging](docs/logging2.png)
 ---
 
 # Load Testing
@@ -183,13 +166,7 @@ Example test scenario:
 
 This generates metrics visible in Grafana dashboards.
 
-📸 **SCREENSHOT HERE**
-
-Add screenshot showing Locust load test UI.
-
-Example:
-
-docs/locust-test.png
+![locust](docs/locust2.png)
 
 ---
 
@@ -207,13 +184,7 @@ Pipeline steps:
 
 The pipeline runs automatically on every push to the repository.
 
-📸 **SCREENSHOT HERE**
-
-Add screenshot showing GitHub Actions pipeline passing.
-
-Example:
-
-docs/github-actions.png
+![cicd](docs/cicd2.png)
 
 ---
 
