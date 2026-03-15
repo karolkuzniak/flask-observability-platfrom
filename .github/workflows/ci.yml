@@ -1,0 +1,42 @@
+name: Flask Observability CI
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r app/requirements.txt
+
+      - name: Lint code
+        run: |
+          pip install flake8
+          flake8 app
+
+      - name: Build Docker image
+        run: |
+          docker build -f focker/Dockerfile -t flask-observability
+
+      - name: Validate docker-compose
+        run: | 
+          docker compose config
+          

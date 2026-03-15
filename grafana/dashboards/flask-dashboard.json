@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true.,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Requests per second",
+      "targers": [
+        {
+          "expr": "rate(flask_request_total[1m])",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Errors",
+      "targets": [
+        {
+          "expr":"rate(flask_errors_total[1m]",
+          "refId": "B",
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      }
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Flask Observability Dashboard",
+  "version": 1
+}
